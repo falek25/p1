@@ -14,6 +14,8 @@
 
         #header {
             display: flex;
+            text-align: right;
+            /* Make all content inside the header right-aligned by default */
             align-items: center;
             justify-content: space-between;
             position: absolute;
@@ -35,25 +37,60 @@
             /* Aligns text to the right */
         }
 
+        #sub-header-container {
+            text-align: center;
+            /* Specifically right-align text within this div */
+            margin-top: 150px;
+            /* Space between header and sub-header text */
+            padding: 20px 80px;
+        }
+
+        #sub-header-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        #button-container {
+            text-align: center;
+            /* Center the button within this div */
+            margin-top: 10px;
+            /* Space between sub-header text and button */
+        }
+
+        #action-button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #action-button:hover {
+            background-color: #0056b3;
+        }
+
 
         #waffle-container {
             display: flex;
             flex-direction: column;
-            margin-top: 10px;
+            margin-top: 5px;
             align-items: center;
             padding: 50px;
             /* Padding to prevent overlap with the logo */
         }
 
         .waffle-wrapper {
-            margin: 20px;
+            margin: 5px;
             text-align: center;
         }
 
         .waffle {
             display: flex;
             flex-wrap: wrap;
-            width: 250px;
+            width: 300px;
             height: 100%;
             margin-bottom: 5px;
         }
@@ -64,12 +101,42 @@
             margin: 1px;
             border-radius: 3px;
             background-color: rgba(211, 211, 211, 0.5);
-            /* Light gray with 50% opacity */
         }
 
-        .block.filled {
-            background-color: rgb(222, 178, 46);
-            /* Blue with 50% opacity */
+        .القاعة1 {
+            background-color: blue;
+        }
+
+        .القاعة2 {
+            background-color: red;
+        }
+
+        .القاعة3 {
+            background-color: green;
+        }
+
+        .القاعة4 {
+            background-color: yellow;
+        }
+
+        .القاعة5 {
+            background-color: orange;
+        }
+
+        .القاعة6 {
+            background-color: purple;
+        }
+
+        .القاعة7 {
+            background-color: rgb(109, 51, 51);
+        }
+
+        .القاعة8 {
+            background-color: rgb(50, 133, 205);
+        }
+
+        .القاعة9 {
+            background-color: rgb(182, 121, 195);
         }
 
         .waffle-id {
@@ -129,21 +196,55 @@
             /* Adjust as needed */
             margin-top: 20px;
         }
+
+        #totals-container {
+            display: flex;
+            justify-content: center;
+            /* Optional: center the totals in the container */
+            align-items: center;
+            margin-top: 100px;
+            /* Space between header and totals */
+        }
+
+        .total-display {
+            margin: 0 5px;
+            /* Space between individual totals */
+            font-size: 14px;
+            /* Font size */
+            color: #333;
+            /* Text color, adjust as needed */
+            /* Optional styling: */
+            padding: 5px;
+            text-align: center; 
+            background-color: rgba(215, 215, 215, 0.4);
+            border: 1px solid #ccc; 
+            border-radius: 3px; 
+        }
     </style>
 </head>
 
 <body>
     <div id="header">
-        <img src="/p1/data/logo.png" alt="Logo" width="100"> <!-- Replace with your logo path -->
-        <span id="header-text">متابعة لبنات الأجزاء</span> <!-- Add your text -->
+        <img src="/data/logo.png" alt="Logo" width="200"> <!-- Replace with your logo path -->
+        <span id="header-text">🌙 مرحباً شهر القلوب: 
+            مسابقة الاستعداد لرمضان 🌙</span> <!-- Header text -->
     </div>
+    <div id="sub-header-container">
+        <p id="sub-header-text">✨ مسابقة تفاعلية أسبوعية لمرافقة الطالبات في رحلة قراءة هادفة استعدادًا لشهر رمضان المبارك  يطرح سؤالان أسبوعيًا حول محتوى الكتاب، وعلى الطالبات الإجابة خلال المهلة المحددة يتم فرز الإجابات الصحيحة أسبوعيًا ومع نهاية المسابقة يتم إعلان الفائزات وفقًا لعدد الإجابات الصحيحة والتفاعل المستمر ✨</p> <!-- New sub-header text -->
+    </div>
+    <div id="button-container">
+        <button id="action-button" onclick="window.location.href='https://drive.google.com/file/d/1hUmdJu7UGU5Pks-J9Ad_RpFyfVmCzWkV/view?usp=sharing';">تحميل كتاب المسابقة</button>
+    </div>
+    <div id="totals-container"></div> <!-- Container for the totals -->
     <div id="waffle-container"></div>
-    <!-- Modal structure -->
+
+    <!-- Modal structure for displaying block details -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p id="details-text"></p>
         </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
