@@ -13,7 +13,7 @@ $(document).ready(function () {
             if (currentLine.length >= 3) {
                 const blockNumber = parseInt(currentLine[0], 10);
                 const colorClass = currentLine[1].trim();
-                const detail = currentLine[2].trim(); // Assuming details are in the third column
+                const detail = currentLine[2].trim();
 
                 if (!isNaN(blockNumber) && colorClass) {
                     blockColors[blockNumber] = colorClass;
@@ -36,13 +36,18 @@ $(document).ready(function () {
             totalsContainer.append(totalDisplay);
         }
 
-        // Start from the last container and work upwards
-        for (let containerIndex = 7; containerIndex >= 0; containerIndex--) {
+        // Adjust to create 60 blocks in total
+        const totalBlocks = 60;
+        const blocksPerContainer = 10;
+        const totalContainers = totalBlocks / blocksPerContainer;
+
+        // Create containers
+        for (let containerIndex = totalContainers - 1; containerIndex >= 0; containerIndex--) {
             const waffleWrapper = $('<div class="waffle-wrapper"></div>');
             const waffle = $('<div class="waffle"></div>');
 
-            for (let blockIndex = 0; blockIndex < 10; blockIndex++) {
-                const blockNumber = (7 - containerIndex) * 10 + blockIndex + 1;
+            for (let blockIndex = 0; blockIndex < blocksPerContainer; blockIndex++) {
+                const blockNumber = (totalContainers - 1 - containerIndex) * blocksPerContainer + blockIndex + 1;
                 const block = $('<div class="block"></div>');
 
                 // Apply the color class from the CSV
@@ -78,5 +83,4 @@ $(document).ready(function () {
     }).fail(function () {
         console.error('Error fetching CSV data');
     });
-
 });
