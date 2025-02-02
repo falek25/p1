@@ -28,11 +28,12 @@ $(document).ready(function () {
             }
         }
 
-        // Display totals
+        // Display totals with matching colors
         const totalsContainer = $('#totals-container');
         totalsContainer.html('');
         for (const [colorClass, count] of Object.entries(classTotals)) {
-            const totalDisplay = $('<div class="total-display">' +  colorClass  + ': ' + '(' + count + ')' + '</div>');
+            const totalDisplay = $('<div class="total-display">' + colorClass + ': ' + '(' + count + ')' + '</div>');
+            totalDisplay.addClass(colorClass); // Add class to match styles
             totalsContainer.append(totalDisplay);
         }
 
