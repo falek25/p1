@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متابعة لبنات الأجزاء</title>
+    <title>مسابقة الاستعداد لرمضان</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            margin: 10px;
+            padding: 10%;
             background-size: cover;
+
+
         }
 
         #header {
@@ -28,26 +30,33 @@
             margin-bottom: 20px;
         }
 
+        #header-container {
+            text-align: center;
+            /* Specifically right-align text within this div */
+            margin-top: 20px;
+            /* Space between header and sub-header text */
+            padding: 20px 30px;
+
+        }
+
         #header-text {
-            font-size: 18px;
-            /* Adjust size as needed */
-            color: #333;
-            /* Adjust color as needed */
-            margin-left: auto;
-            /* Aligns text to the right */
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
         }
 
         #sub-header-container {
             text-align: center;
             /* Specifically right-align text within this div */
-            margin-top: 150px;
+            margin-top: 5px;
             /* Space between header and sub-header text */
-            padding: 20px 80px;
+            padding: 20px 30px;
         }
 
         #sub-header-text {
             font-size: 14px;
             color: #666;
+            justify-content: center;
         }
 
         #button-container {
@@ -76,28 +85,38 @@
         #waffle-container {
             display: flex;
             flex-direction: column;
-            margin-top: 5px;
+            justify-content: flex-end;
+            /* Align items to the bottom of the container */
             align-items: center;
-            padding: 50px;
-            /* Padding to prevent overlap with the logo */
+            margin-top: 20px;
+            margin-left: 10%;
+            padding: 50px 20px;
+            width: 180px;
+            height: 750px;
+            background-image: url('p1/data/m.png');
+            background-size: contain;
+            background-position: top;
+            background-repeat: no-repeat;
         }
 
         .waffle-wrapper {
-            margin: 5px;
+            margin: 1px;
             text-align: center;
+            padding-left: 30px;
         }
 
         .waffle {
             display: flex;
             flex-wrap: wrap;
-            width: 300px;
-            height: 100%;
+            width: 140px;
             margin-bottom: 5px;
+            align-items: center;
+            padding-right: 20px;
         }
 
         .block {
-            width: 50px;
-            height: 25px;
+            width: 25px;
+            height: 12.5px;
             margin: 1px;
             border-radius: 3px;
             background-color: rgba(211, 211, 211, 0.5);
@@ -202,12 +221,12 @@
             justify-content: center;
             /* Optional: center the totals in the container */
             align-items: center;
-            margin-top: 100px;
+            margin-top: 30px;
             /* Space between header and totals */
         }
 
         .total-display {
-            margin: 0 5px;
+            margin: 0 1px;
             /* Space between individual totals */
             font-size: 10px;
             /* Font size */
@@ -215,25 +234,33 @@
             /* Text color, adjust as needed */
             /* Optional styling: */
             padding: 5px;
-            text-align: center; 
+            text-align: center;
             background-color: rgba(215, 215, 215, 0.4);
-            border: 1px solid #ccc; 
-            border-radius: 3px; 
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
     </style>
 </head>
 
 <body>
     <div id="header">
-        <img src="p1/data/logo.png" alt="Logo" width="200"> <!-- Replace with your logo path -->
-        <span id="header-text">🌙 مرحباً شهر القلوب: 
-            مسابقة الاستعداد لرمضان 🌙</span> <!-- Header text -->
+        <img src="p1/data/logo.png" alt="Logo" width="100"> <!-- Replace with your logo path -->
     </div>
+    <div id="header-container">
+    <span id="header-text">🌙 
+        مسابقة الاستعداد لرمضان </span> <!-- Header text -->
+    </div>
+
     <div id="sub-header-container">
-        <p id="sub-header-text">✨ مسابقة تفاعلية أسبوعية لمرافقة الطالبات في رحلة قراءة هادفة استعدادًا لشهر رمضان المبارك  يطرح سؤالان أسبوعيًا حول محتوى الكتاب، وعلى الطالبات الإجابة خلال المهلة المحددة يتم فرز الإجابات الصحيحة أسبوعيًا ومع نهاية المسابقة يتم إعلان الفائزات وفقًا لعدد الإجابات الصحيحة والتفاعل المستمر ✨</p> <!-- New sub-header text -->
+        <p id="sub-header-text"> مسابقة تفاعلية أسبوعية لمرافقة الطالبات في رحلة قراءة هادفة استعدادًا لشهر رمضان
+            المبارك يطرح سؤالان أسبوعيًا حول محتوى الكتاب، وعلى الطالبات الإجابة خلال المهلة المحددة يتم فرز الإجابات
+            الصحيحة أسبوعيًا ومع نهاية المسابقة يتم إعلان الفائزات وفقًا لعدد الإجابات الصحيحة والتفاعل المستمر </p>
+        <!-- New sub-header text -->
     </div>
     <div id="button-container">
-        <button id="action-button" onclick="window.location.href='https://drive.google.com/file/d/1hUmdJu7UGU5Pks-J9Ad_RpFyfVmCzWkV/view?usp=sharing';">تحميل كتاب المسابقة</button>
+        <button id="action-button"
+            onclick="window.location.href='https://drive.google.com/file/d/1hUmdJu7UGU5Pks-J9Ad_RpFyfVmCzWkV/view?usp=sharing';">تحميل
+            كتاب المسابقة</button>
     </div>
     <div id="totals-container"></div> <!-- Container for the totals -->
     <div id="waffle-container"></div>
