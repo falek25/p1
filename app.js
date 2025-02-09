@@ -4,7 +4,7 @@ $(document).ready(function () {
     $.get(CSV_URL, function (data) {
         const lines = data.split('\n');
         const blockColors = {};
-        const blockDetails = {}; // Object to store details for each block
+        const blockDetails = {};
         const classTotals = {};
 
         // Parse the CSV data
@@ -28,14 +28,27 @@ $(document).ready(function () {
             }
         }
 
-        // Display totals with matching colors
+        // Define all possible classes
+        const allClasses = [
+            'تأهيلي-مستوى2-قاعة1',
+            'تأهيلي-مستوى2-قاعة2',
+            'عالي-مستوى2-قاعة1',
+            'عالي-مستوى2-قاعة2',
+            'عالي-مستوى2-قاعة3',
+            'تأهيلي-مستوى4-قاعة1',
+            'عالي-مستوى4-قاعة1',
+            'عالي-مستوى4-قاعة2'
+                ];
+
+        // Display totals for all classes, even if zero
         const totalsContainer = $('#totals-container');
         totalsContainer.html('');
-        for (const [colorClass, count] of Object.entries(classTotals)) {
+        allClasses.forEach(colorClass => {
+            const count = classTotals[colorClass] || 0; // Default to zero if not in classTotals
             const totalDisplay = $('<div class="total-display">' + colorClass + ': ' + '(' + count + ')' + '</div>');
-            totalDisplay.addClass(colorClass); // Ensure this line applies the color class
+            totalDisplay.addClass(colorClass); // Add class to match styles
             totalsContainer.append(totalDisplay);
-        }
+        });
 
         // Adjust to create 60 blocks in total
         const totalBlocks = 60;
