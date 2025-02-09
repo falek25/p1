@@ -33,7 +33,7 @@ $(document).ready(function () {
         totalsContainer.html('');
         for (const [colorClass, count] of Object.entries(classTotals)) {
             const totalDisplay = $('<div class="total-display">' + colorClass + ': ' + '(' + count + ')' + '</div>');
-            totalDisplay.addClass(colorClass); // Add class to match styles
+            totalDisplay.addClass(colorClass); // Ensure this line applies the color class
             totalsContainer.append(totalDisplay);
         }
 
